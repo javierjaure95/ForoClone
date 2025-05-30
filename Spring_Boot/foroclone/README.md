@@ -15,8 +15,12 @@ Este proyecto es un clon funcional de Reddit, una plataforma de foros donde los 
 1. Clona el repositorio:  
    ```bash
    git clone https://github.com/tuusuario/foro-clone.git
-2. cd Spring_Boot/foroclone
-3. docker compose up 
+2. Entrar al directorio:
+   ```bash
+    cd Spring_Boot/foroclone
+3. Crear el contenedor docker
+   ```bash
+   docker compose up 
 
 Esto iniciará la API RESTful en el puerto 8080 y la base de datos PostgreSQL en el puerto 5432.
 
