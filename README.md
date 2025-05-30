@@ -9,7 +9,7 @@ Aquí encontrarás ejemplos prácticos de mis conocimientos en Java y frameworks
 
 ## ForoClone 
 
-## Descripción
+### Descripción
 Este proyecto es un clon de Reddit, permite crear comunidades, publicar en ellas, comentar publicaciones y votar posts/comentarios.
 
 ### Tecnologías Utilizadas
