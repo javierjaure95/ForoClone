@@ -17,7 +17,7 @@ Este proyecto es un clon funcional de Reddit, una plataforma de foros donde los 
    git clone https://github.com/javierjaure95/portfolioBackend.git
 2. Entrar al directorio:
    ```bash
-    cd Spring_Boot/foroclone
+   cd Spring_Boot/foroclone
 3. Crear el contenedor docker
    ```bash
    docker compose up 
