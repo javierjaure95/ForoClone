@@ -54,7 +54,7 @@ public class UserController {
         return foundUser.map(userEntity -> {
             UserDto userDto = userMapper.mapTo(userEntity);
             return new ResponseEntity<>(userDto, HttpStatus.OK);
-        }).orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
+        }).orElse(new ResponseEntity<>(HttpStatus.NO_CONTENT));
     }
 
     @PutMapping(path = "/users/{id}")
@@ -63,7 +63,7 @@ public class UserController {
             @RequestBody UserCreateDto userCreateDto) {
 
         if(!userService.isExists(id)) {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         }
 
         userCreateDto.setId(id);
@@ -80,7 +80,7 @@ public class UserController {
             @RequestBody UserCreateDto userCreateDto
     ) {
         if(!userService.isExists(id)) {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         }
 
         UserEntity userEntity = userCreateMapper.mapFrom(userCreateDto);

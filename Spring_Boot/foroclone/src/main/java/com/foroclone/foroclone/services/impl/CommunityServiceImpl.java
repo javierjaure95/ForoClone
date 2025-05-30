@@ -69,5 +69,9 @@ public class CommunityServiceImpl implements CommunityService{
         return communityRepository.findByCreatorId(userId);
     }
 
+    @Override
+    public Long count() {
+        return communityRepository.count();
+    }
 
 }

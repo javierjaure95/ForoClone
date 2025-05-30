@@ -11,6 +11,6 @@ public interface PostRepository  extends CrudRepository<PostEntity, Long>{
 
     List<PostEntity> findByCreatorId(Long userId);
 
-    List<PostEntity> findByCommunityId(Long CommunityId);
+    List<PostEntity> findByCommunityId(Long communityId);
 
 }

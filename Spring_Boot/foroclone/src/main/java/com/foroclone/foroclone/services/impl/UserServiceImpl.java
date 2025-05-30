@@ -67,6 +67,11 @@ public class UserServiceImpl implements UserService {
             user.setPassword(hashed);
             return userRepository.save(user);
     }).orElseThrow(() -> new RuntimeException("User not found"));
-}
+    }
+
+    @Override
+    public Long count() {
+        return userRepository.count();
+    }
 
 }

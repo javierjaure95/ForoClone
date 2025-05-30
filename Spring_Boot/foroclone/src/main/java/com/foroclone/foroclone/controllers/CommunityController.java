@@ -47,17 +47,13 @@ public class CommunityController {
         return foundCommunity.map(communityEntity -> {
             CommunityDto communityDto = communityMapper.mapTo(communityEntity);
             return new ResponseEntity<>(communityDto, HttpStatus.OK);
-        }).orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
+        }).orElse(new ResponseEntity<>(HttpStatus.NO_CONTENT));
     }
 
 
     @GetMapping("/communities/by-user/{userId}")
     public ResponseEntity<List<CommunityDto>> getCommunitiesByUser(@PathVariable Long userId) {
         List<CommunityEntity> communities = communityService.findByCreatorId(userId);
-
-        if (communities.isEmpty()) {
-            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-        }
 
         List<CommunityDto> response = communities.stream()
                 .map(communityMapper::mapTo)
@@ -73,7 +69,7 @@ public class CommunityController {
             @RequestBody CommunityDto communityDto) {
 
         if(!communityService.isExists(id)) {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         }
 
         communityDto.setId(id);
@@ -90,7 +86,7 @@ public class CommunityController {
             @RequestBody CommunityDto communityDto
     ) {
         if(!communityService.isExists(id)) {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         }
 
         CommunityEntity communityEntity = communityMapper.mapFrom(communityDto);

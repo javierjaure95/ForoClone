@@ -3,6 +3,8 @@ package com.foroclone.foroclone.domain.entities;
 import java.time.LocalDateTime;
 
 import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -35,5 +37,6 @@ public class CommunityEntity {
 
     @ManyToOne
     @JoinColumn(name = "users_id", nullable = false)
+    @OnDelete(action = OnDeleteAction.CASCADE)
     private UserEntity creator;
 }

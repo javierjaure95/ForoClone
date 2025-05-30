@@ -17,29 +17,29 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Builder
 @Entity
-@Table(name = "posts")
-public class PostEntity {
+@Table(name = "upvotes")
+public class UpvoteEntity {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "posts_id_seq")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "upvotes_id_seq")
     private Long id;
-
-    @Column(nullable = false)
-    private String title;
-
-    private String content;
 
     @CreationTimestamp
     @Column(updatable = false)
     private LocalDateTime createdAt;
 
-
-    @ManyToOne
-    @JoinColumn(name = "communities_id", nullable = false)
-    @OnDelete(action = OnDeleteAction.CASCADE)
-    private CommunityEntity community;
-
     @ManyToOne
     @JoinColumn(name = "users_id", nullable = false)
     @OnDelete(action = OnDeleteAction.CASCADE)
     private UserEntity creator;
+
+    @ManyToOne
+    @JoinColumn(name = "posts_id")
+    @OnDelete(action = OnDeleteAction.CASCADE)
+    private PostEntity post;
+
+    @ManyToOne
+    @JoinColumn(name = "comments_id")
+    @OnDelete(action = OnDeleteAction.CASCADE)
+    private CommentEntity comment;
+
 }

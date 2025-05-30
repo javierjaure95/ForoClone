@@ -34,4 +34,10 @@ public class UserCreateServiceImpl implements UserCreateService {
 
         return userRepository.save(userEntity);
     }
+
+    
+    @Override
+    public Long count() {
+        return userRepository.count();
+    }
 }

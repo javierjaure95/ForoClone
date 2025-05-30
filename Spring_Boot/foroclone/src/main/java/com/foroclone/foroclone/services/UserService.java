@@ -17,4 +17,6 @@ public interface UserService {
     void delete(Long id);
 
     void changePassword(Long userId, String newPassword);
+
+    Long count();
 }

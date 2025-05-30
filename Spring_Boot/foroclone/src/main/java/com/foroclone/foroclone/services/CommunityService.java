@@ -20,4 +20,6 @@ public interface CommunityService {
 
     List<CommunityEntity> findByCreatorId(Long userId);
 
+    Long count();
+
 }

@@ -1,28 +1,25 @@
 services:
   postgres:
     image: postgres:latest
-    container_name: reddit_postgres
+    container_name: reddit_postgreSQL
     environment:
       POSTGRES_DB: reddit_clone
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: password
     ports:
       - "5432:5432"
-    volumes:
-      - postgres_data:/var/lib/postgresql/data
     restart: unless-stopped
 
-  pgadmin:
-    image: dpage/pgadmin4:latest
-    container_name: reddit_pgadmin
-    environment:
-      PGADMIN_DEFAULT_EMAIL: admin@reddit.com
-      PGADMIN_DEFAULT_PASSWORD: admin
+  app:
+    build: .
+    container_name: reddit_app
     ports:
-      - "5050:80"
+      - "8080:8080"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/reddit_clone
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: password
+      SPRING_JPA_HIBERNATE_DDL_AUTO: update
     depends_on:
       - postgres
     restart: unless-stopped
-
-volumes:
-  postgres_data:
