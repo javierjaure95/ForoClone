@@ -14,7 +14,7 @@ Este proyecto es un clon funcional de Reddit, una plataforma de foros donde los 
 
 1. Clona el repositorio:  
    ```bash
-   git clone https://github.com/tuusuario/foro-clone.git
+   git clone https://github.com/javierjaure95/portfolioBackend.git
 2. Entrar al directorio:
    ```bash
     cd Spring_Boot/foroclone
