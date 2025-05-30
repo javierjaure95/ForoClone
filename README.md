@@ -1,16 +1,10 @@
-# Portfolio Backend 
-
-## Descripción
-Este es mi portfolio backend, un espacio donde desarrollo proyectos personales con el objetivo de aprender y mejorar mis habilidades en distintos lenguajes y tecnologías de programación backend. Cada proyecto está diseñado para enfrentar nuevos retos y profundizar en conceptos fundamentales como el desarrollo de APIs, manejo de Bases de Datos y escalabilidad.
-
-Aquí encontrarás ejemplos prácticos de mis conocimientos en Java y frameworks Spring Boot
-
 # Spring Boot
 
 ## ForoClone 
 
 ### Descripción
 Este proyecto es un clon de Reddit, permite crear comunidades, publicar en ellas, comentar publicaciones y votar posts/comentarios.
+Lo cree con el fin de ser un primer acercamiento a Spring Boot
 
 ### Tecnologías Utilizadas
 - Lenguaje: Java 21
